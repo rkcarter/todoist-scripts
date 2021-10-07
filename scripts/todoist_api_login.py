@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+''' Sample of logging in to the Todoist api and doing an initial full sync '''
 import todoist
 # Get my personal API (copied into a file from Todoist | Integrations |
 # API token. Strip off end-of-line character)
