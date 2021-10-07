@@ -10,9 +10,14 @@ When I tested these, I did things one step at a time, and used "break" in the lo
 
 Also, Todoist fairly recently changed their task names down from several thousand characters, to 500 characters, so I first ran todoist_find_urls_in_task_notes.py, and hand-modified them in the Todoist app. Didn't know if they would cause errors when I modified item names, so got that done first. Then started modifying away.
 
-To do: learn enough Python regex stuff to find and match the old-style urls:
+TO DO: 
+
+learn enough Python regex stuff to find and match the old-style urls:
+
 http[s]://server/and/path (URL title) (with one space between)
+
 to:
+
 [URL title](http[s]://server/and/path)
 
 ... while remembering that "URL title" could itself have parens inside when trying to parse it out of the old-style URL. Also check when looking for the old-style URL that I'm not finding the new-style one, i.e. it's not preceded by "](" .
