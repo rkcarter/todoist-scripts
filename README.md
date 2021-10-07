@@ -3,6 +3,9 @@ Scripts for examining and manipulating Todoist objects
 
 Use these at your own risk! There's no error checking in any of them, so you can seriously break things in Todoist if something goes wrong.
 
+You will need the following:
+https://pypi.org/project/todoist-python/
+
 The first thing you will need to make these work is to create a file
 called "todoist_api.txt" in the same directory as these scripts. It needs to contain one line, that is the text copied from going to your Todoist app, Then click your picture to get to Settings, then Integrations and where the API token is, click on "Copy to clipboard." Put that in todoist_api.txt as the only line.
 
