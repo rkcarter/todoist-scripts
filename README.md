@@ -1,7 +1,7 @@
 # todoist-scripts
 Scripts for examining and manipulating Todoist objects
 
-Use these at your own risk! There's no error checking in any of them, so you can seriously break things in Todoist if something goes wrong.
+Use these at your own risk! There's no error checking in any of them, so you can seriously break things in Todoist if something goes wrong. Also, there's at least one limitation I know of: the script converting old bold to new bold doesn't check that occurrences of "!!" are paired -- so though the intent is to change e.g. "This is !!vital!! information" to "This is **vital** information," it will also change "I'm so happy to see you!!" to "I'm so happy to see you**"
 
 You will need the following:
 https://pypi.org/project/todoist-python/
