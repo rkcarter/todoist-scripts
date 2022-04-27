@@ -21,7 +21,7 @@ http[s]://server/and/path (URL title) (with one space between)
 
 to:
 
-[URL title](http[s]://server/and/path)
+\[URL title\]\(http[s]://server/and/path\)
 
 ... while remembering that "URL title" could itself have parens inside when trying to parse it out of the old-style URL. Also check when looking for the old-style URL that I'm not finding the new-style one, i.e. it's not preceded by "](" .
 
