@@ -1,0 +1,24 @@
+import re, requests
+ 
+TOKEN = "YOUR_API_TOKEN"
+APPLY = False # set to True to update the tasks
+H = {"Authorization": f"Bearer {TOKEN}"}
+PATTERN = re.compile(r"^every\s+(\d{1,2})-(\d{1,2})\b", re.I)
+ 
+cursor = None
+while True:
+params = {"limit": 200}
+if cursor:
+params["cursor"] = cursor
+data = requests.get("https://api.todoist.com/api/v1/tasks", headers=H, params=params).json()
+for task in data["results"]:
+due = task.get("due") or {}
+old = due.get("string") or ""
+if PATTERN.match(old):
+new = PATTERN.sub(r"every \1/\2", old)
+print(f'{task["content"]}: "{old}" -> "{new}"')
+if APPLY:
+requests.post(f'https://api.todoist.com/api/v1/tasks/{task["id"]}', headers=H, json={"due_string": new}).raise_for_status()
+cursor = data.get("next_cursor")
+if not cursor:
+break
